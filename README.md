@@ -41,7 +41,7 @@ imports: [
   </ion-content>
 </umn-page>
 ```
-3. Use the `umn-back` component in your template to add a back button to your page. This is better than the default `ionic-back-button` since it also works on window reload.
+3. Use the [`umn-back`](./docs/umn-back.md) component in your template to add a back button to your page. This is better than the default `ionic-back-button` since it also works on window reload.
 
 ```html
 <ion-header>
@@ -81,8 +81,8 @@ This is when you want to open up a page on right-side of the existing page on de
 
 > This works for both mobile and desktop. On mobile, the child page will be pushed on top of the parent page. On desktop, the child page will be shown in the router outlet.
 
-> `umn-page` will automatically hande routing on mobile, hence you don't need to provide sibling routes for mobile. 
-2. [Optional] Add `EmptyComponent` as a sibling route to your child page, if the children, doesn't redirect to a default path. Read more about empty component [here](./docs/empty-component.md).
+> `umn-page` will automatically handle routing on mobile, hence you don't need to provide sibling routes for mobile. 
+2. [Optional] Add `EmptyComponent` as a sibling route to your child page, if the children, doesn't redirect to a default path. Read more about empty components [here](./docs/empty-component.md).
 ```ts
 children: [
   {
@@ -95,7 +95,7 @@ children: [
   }
 ]
 ```
-3. Use the `path` attribute on any ionic component, inside `umn-page` to navigate to a child page.
+3. Use the [`path`](./docs/path.md) directive on any ionic component, inside `umn-page` to navigate to a child page.
 
 ```html
 
@@ -134,9 +134,73 @@ All the lifecycle hooks of `ion-page` are available in `umn-page`.
 - ionViewWillLeave
 - ionViewDidLeave
 
-### Whats New
 
-#### [0.0.3] - 16 Jun 2022
+## Properties
+
+### desktopViewType
+
+| Name | Description |
+| :--- | :--- |
+| Description | This allows you to show either column view, or show the page full screen on desktop. |
+| Type |  `"column"` \| `"full_screen"` |
+| Default | `"full_screen"` |
+
+### contentWidthDesktop
+
+| Name | Description |
+| :--- | :--- |
+| Description | This is the width the page will take, when open as `column` on desktop or tablet. |
+| Type |  `number` |
+| Default | 400 |
+
+### contentWidthDesktopExpanded
+
+| Name | Description |
+| :--- | :--- |
+| Description | If you are using [width-button](./docs/width-button.md) to toggle page with, `contentWidthDesktopExpanded` is the maximum size that the page will take as a column. |
+| Type |  `number` |
+| Default | 600 |
+
+> Unit of both `contentWidthDesktopExpanded` and `contentWidthDesktop` is `px`.
+
+### label
+
+| Name | Description |
+| :--- | :--- |
+| Description | This is the label of the page, you may use this label to show a breadcrumb of pages. |
+| Type |  `string` |
+| Default | If label is not provided, it is set to the router path. |
+
+### emptyComponentClassName
+
+| Name | Description |
+| :--- | :--- |
+| Description | If you are using a custom [`empty-component`](./docs/empty-component.md) provide its class as a string here|
+| Type |  `string` |
+| Default | `EmptyComponent` |
+
+## Events
+
+| Name | Description |
+| :--- | :--- |
+| pathChange | Fired when a page is pushed or popped in the `ion-router-outlet` inside of `umn-page` |
+
+
+## Sub Components
+
+- [umn-back](./docs/umn-back.md)
+- [width-button](./docs/width-button.md)
+- [empty-component](./docs/empty-component.md)
+
+## Directives
+
+- [path](./docs/path.md)
+
+
+
+## Whats New
+
+### [0.0.3] - 16 Jun 2022
 
 - Added default empty component.
 - `pathActive` class on active paths
