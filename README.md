@@ -147,6 +147,7 @@ This is when you want to open up any route, but not as a child of the current pa
 ```
 
 ### Advanced Usage
+- [Reuse Strategy](./docs/advanced-usage.md#reuse-strategy)
 - [ion-menu](./docs/advanced-usage.md#using-with-ion-menu)
 - [ion-split-pane](./docs/advanced-usage.md#using-with-ion-split-pane)
 
