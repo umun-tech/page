@@ -81,7 +81,12 @@ imports: [
 
 ## Example Apps
 
-- [iAbhinav/umn-page-examples](https://stackblitz.com/~/github.com/iAbhinav/umn-page-examples) This example contains multiple projects that showcase the usage of `umun-page`.
+- [iAbhinav/umn-page-examples](https://stackblitz.com/~/github.com/iAbhinav/umn-page-examples) This example contains multiple projects in a nx mono-repo that showcase the usage of `umun-page`.
+
+To run this project, 
+1. Open the link in chrome (or a browser that supports stackblitz).
+2. `npm i` (Usually is autorun by stackblitz)
+3. `nx serve mobile-nav` or `nx serve insurance-app` or any other app from the nx mono-repo.
 
 ## Navigation
 
