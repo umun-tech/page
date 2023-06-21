@@ -1,6 +1,31 @@
 # Advanced Usage
 
-### Using With Ion Menu
+## Reuse Strategy
+
+Ionic/Angular would reuse the same instance of a component if the route is reused. This becomes a problem if you have a path that has `:id` or any param. 
+
+For example
+
+```ts
+{
+path: 'update/:policyId',
+loadChildren: () => import("./../policy-page/policy-page.module").then(m => m.PolicyPageModule)
+}
+```
+
+To mitigate the reuse, simply add this to your `app.module.ts`.
+
+```ts
+import { ReuseRouteStrategy } from "@umun-tech/page";
+import { RouteReuseStrategy } from "@angular/router";
+
+
+providers: [
+  { provide: RouteReuseStrategy, useClass: ReuseRouteStrategy },
+]
+```
+
+## Using With Ion Menu
 Read more about ion menu [here](https://ionicframework.com/docs/api/menu).
 
 ```html
@@ -29,7 +54,7 @@ Read more about ion menu [here](https://ionicframework.com/docs/api/menu).
 </umn-page>
 ```
 
-### Using With Ion Split Pane
+## Using With Ion Split Pane
 
 Read more about ion split pane [here](https://ionicframework.com/docs/api/split-pane).
 
