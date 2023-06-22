@@ -34,6 +34,8 @@ Ionic offers an effective method for mobile page navigation. However, its intuit
 - On mobile, the pages are pushed on top of each other.
 - On desktop, the pages are shown side by side.
 
+![Files App on the iPhone](./resources/apple_files_iPhone_app.gif)
+
 ## Installation
 
 ```bash
